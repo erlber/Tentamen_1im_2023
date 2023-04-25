@@ -49,13 +49,13 @@ def leggTilMedlem():
     medlemmer.append(nyttMedlem)
 
     listUtMedlemer(2, [nyttMedlem])
-    print("| Er vellykket degistrert i Tores Gym")
-    input("| Trykke en tast for å gå tilbake til hovedmeny: ")
+    print("| Er vellykket registrert i Tores medlemsregisster")
+    input("| Trykke enter for å gå tilbake til hovedmeny: ")
 
     return ""
 
 
-def listUtMedlemer(versjon, medlemsliste = medlemmer):
+def listUtMedlemmer(versjon, medlemsliste = medlemmer):
     space(2)
     if versjon == 1:
         for medlem in medlemsliste:
@@ -74,7 +74,7 @@ def listUtMedlemer(versjon, medlemsliste = medlemmer):
             space(1)
             time.sleep(0.5)
         space(1)
-        input("Trykke en tast for å gå tilbake til hovedmeny: ")
+        input("Trykke en enter for å gå tilbake til hovedmeny: ")
 
     elif versjon == 2:
         for medlem in medlemsliste:
@@ -123,7 +123,7 @@ def redigerMedlem():
                             space(1)
 
         elif valg == "2":
-            listUtMedlemer(2)
+            listUtMedlemmer(2)
         
         elif valg == "0":
             break
@@ -132,31 +132,8 @@ def redigerMedlem():
 
 
 def slettMedlem():
-    space(50)
-    while True:
-        print("|-------------|Slett medlem|------------|")
-        print("|                                       |")
-        print("| 1. Slett medlem                       |")
-        print("| 2. skriv ut alle medlemmer med id     |")
-        print("| 0. Tilbake til hovedmeny              |")
-        print("|---------------------------------------|")
-        valg = input("  Velg ett nummer fra menyen: ")
-        space(1)
-
-        if valg == "1":
-            id = input(" skriv inn id på medlem du ønsker å slette: ")
-            teller = 0
-            for medlem in medlemmer:
-                if medlem[0] == int(id):
-                    medlemmer.pop(teller)
-                teller  += 1
-
-        elif valg == "2":
-            listUtMedlemer(2)
-        elif valg == "0":
-            break
-
-    return ""
+    #din kode hær
+    pass
 
 
 def søkEtterMedlem():
@@ -186,7 +163,7 @@ def main():
             valg = slettMedlem()
 
         elif valg == "4":
-            valg = listUtMedlemer(1)
+            valg = listUtMedlemmer(1)
 
         elif valg == "5":
             valg = søkEtterMedlem()
